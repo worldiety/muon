@@ -1,0 +1,157 @@
+
+<html>
+	<header>
+	<title>Hello World</title>
+	<style>
+		.content {
+			max-width:900px;
+			margin-left:auto;
+			margin-right:auto;
+			font-family: roboto-thin,open-sans,sans-serif;
+			color: black;
+		}
+
+		.title{
+			text-align: center;
+			font-weight: 100;
+		}
+		
+		.subtitle{
+			text-align: center;
+			font-weight: 100;
+		    font-size: x-large;
+		}
+
+		.preface{
+			font-style: italic;
+			page-break-before: always;
+		}
+
+		h2{
+			font-weight: 100;
+			page-break-before: always;
+		}
+
+		h3{
+			font-weight: 100;
+		}
+
+		a{
+			text-decoration: none;
+			color: black;
+		}
+
+		@media print {
+		  	
+			.content {
+				max-width:initial;
+				margin:2cm;
+				font-size: 12pt;
+			}
+		}
+	</style>
+	</header>
+	<body>
+		<div class="content">
+			<h1 class="title">Hello World</h1>
+			<h1 class="subtitle">A system documentation</h1>
+
+			<span class=".page-break"/>
+
+			<p class="preface">
+			Preface
+			<br>
+			Dedicated to all who just wants documentations fast.
+			</p>
+			<h2>Table of contents</h2>
+			<ul class="toc">
+			
+				<li class="level-1"><a href="#chapter-0">my first chapter</a></li>
+				
+					<ul class="toc-subchapter">
+					
+						<li class="level-2"><a href="#subchapter-0">my sub chapter and heading</a></li>
+					
+					</ul>
+				
+			
+				<li class="level-1"><a href="#chapter-1">The second chapter</a></li>
+				
+			
+			</ul>
+		
+			
+				<h2><a name="chapter-0">my first chapter</a></h2>
+				
+					<p>The first chapter is about stuff.</p>
+				
+					<p>
+				The inventory system consists of a login server, an inventory service and a web application.
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+				ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+				dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+				labore et dolore magna aliquyam erat, sed diam voluptua.
+				
+				Text is aligned to chars at the left side and interpreted as markdown. Leading and trailing empty lines
+				are discarded.
+
+		   </p>
+				
+
+				
+					<h3><a name="subchapter-0">my sub chapter and heading</a></h3>
+					
+						<p>my sub chapter is about sub stuff.</p>
+					
+				
+			
+				<h2><a name="chapter-1">The second chapter</a></h2>
+				
+					<p>second chapter stuff.</p>
+				
+					<p>
+				The inventory system consists of a login server, an inventory service and a web application.
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+				ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+				dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+				labore et dolore magna aliquyam erat, sed diam voluptua.
+				
+				Text is aligned to chars at the left side and interpreted as markdown. Leading and trailing empty lines
+				are discarded.
+
+		   </p>
+				
+					<p>
+				The inventory system consists of a login server, an inventory service and a web application.
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+				ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+				dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+				labore et dolore magna aliquyam erat, sed diam voluptua.
+				
+				Text is aligned to chars at the left side and interpreted as markdown. Leading and trailing empty lines
+				are discarded.
+
+		   </p>
+				
+					<p>
+				The inventory system consists of a login server, an inventory service and a web application.
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+				ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+				dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+				labore et dolore magna aliquyam erat, sed diam voluptua.
+				
+				Text is aligned to chars at the left side and interpreted as markdown. Leading and trailing empty lines
+				are discarded.
+
+		   </p>
+				
+
+				
+			
+		</div>
+	</body>
+</html>
