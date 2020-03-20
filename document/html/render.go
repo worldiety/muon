@@ -57,12 +57,37 @@ const tmpl = `
 			color: black;
 		}
 
+		@page {
+		  size: A4;
+		  margin: 20mm 20mm 20mm 20mm;
+counter-increment: page ;
+		}
+		.pageNumber { content: counter(page); }
+
+		footer,header{
+			display: none;
+		}
+
 		@media print {
-		  	
+
+		  	footer {
+				position: fixed;
+				bottom: 0;
+			}
+
+			header {
+				position: fixed;
+				top: 0;
+			}
+
 			.content {
-				max-width:initial;
-				margin:2cm;
 				font-size: 12pt;
+			}
+			p {
+				page-break-inside: avoid;
+			}
+			footer,header{
+				display: initial;
 			}
 		}
 	</style>
@@ -106,7 +131,19 @@ const tmpl = `
 					{{end}}
 				{{end}}
 			{{end}}
+
+
+			<header>
+			  text in the docs header
+			   <hr/>	
+			</header>
+
+			<footer>
+ 			  <hr/>
+			  This is the text that goes at the bottom of every page.<span class="pageNumber"></span>
+			</footer>
 		</div>
+
 	</body>
 </html>
 `
