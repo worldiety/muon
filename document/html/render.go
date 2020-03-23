@@ -106,11 +106,11 @@ counter-increment: page ;
 			</p>
 			<h2>Table of contents</h2>
 			<ul class="toc">
-			{{range $i,$chap := .Chapters}}
+			{{range $i,$chap := .Elements}}
 				<li class="level-1"><a href="#chapter-{{$i}}">{{$chap.Title}}</a></li>
-				{{if .Chapters}}
+				{{if .Elements}}
 					<ul class="toc-subchapter">
-					{{range $i,$chap := .Chapters}}
+					{{range $i,$chap := .Elements}}
 						<li class="level-2"><a href="#subchapter-{{$i}}">{{$chap.Title}}</a></li>
 					{{end}}
 					</ul>
@@ -118,13 +118,13 @@ counter-increment: page ;
 			{{end}}
 			</ul>
 		
-			{{range $i,$chap := .Chapters}}
+			{{range $i,$chap := .Elements}}
 				<h2><a name="chapter-{{$i}}">{{$chap.Title}}</a></h2>
 				{{range .Body}}
 					<p>{{.}}</p>
 				{{end}}
 
-				{{range $i,$chap := .Chapters}}
+				{{range $i,$chap := .Elements}}
 					<h3><a name="subchapter-{{$i}}">{{$chap.Title}}</a></h3>
 					{{range .Body}}
 						<p>{{.}}</p>

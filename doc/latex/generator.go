@@ -14,16 +14,16 @@ func emit(tpl template.Project, doc *doc.Document) {
 	renewCmd(vars, "mdocTitle", doc.Title)
 
 	body := tpl.NewFile(fileContent)
-	for _, c := range doc.Chapters {
+	for _, c := range doc.Elements {
 		printElem(c, body)
 	}
 }
 
-func renewCmd(f *template.File, cmd string, exp string) {
+func renewCmd(f *template.File2, cmd string, exp string) {
 	f.Printf(`\renewcommand{\%s}{%s}\n`, cmd, exp)
 }
 
-func printElem(in interface{}, f *template.File) {
+func printElem(in interface{}, f *template.File2) {
 	switch t := in.(type) {
 	case string:
 		lines := normalize(t)
