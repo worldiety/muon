@@ -1,13 +1,11 @@
 package doc
 
-
-
 type NodeType string
 
-const(
-	TText NodeType = "text"
-	TPreface = "preface"
-	TChapter = "chapter"
+const (
+	TText    NodeType = "text"
+	TPreface          = "preface"
+	TChapter          = "chapter"
 )
 
 /*
@@ -69,8 +67,8 @@ Node structure is as follows
 */
 type Node struct {
 	Type       string
-	Name       string
-	Text       string
-	Nodes      []*Node
+	Value      string
+	Body       []*Node
 	Properties []*Node
 }
+

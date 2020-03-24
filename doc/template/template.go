@@ -34,7 +34,8 @@ func Open(dir string, buildDir string) (*Project, error) {
 	prj.text.Funcs(text.FuncMap{
 		"escapeLatex": EscapeLatex,
 		"typeOf":      typeOfName,
-		"isType":      isTypeName,
+		"isType":      is,
+		"str":strOf,
 	})
 
 	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {

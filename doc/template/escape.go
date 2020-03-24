@@ -1,6 +1,8 @@
 package template
 
 import (
+	"fmt"
+	"github.com/worldiety/muon/doc"
 	"reflect"
 	"strings"
 )
@@ -28,7 +30,7 @@ func EscapeLatex(str string) string {
 			sb.WriteString(`\textasciitilde`)
 		case '^':
 			sb.WriteString(`\textasciicircum`)
-		case '/':
+		case '\\':
 			sb.WriteString(`\textbackslash`)
 		default:
 			sb.WriteRune(r)
@@ -43,4 +45,12 @@ func typeOfName(i interface{}) string {
 
 func isTypeName(i interface{}, name string) bool {
 	return typeOfName(i) == name
+}
+
+func is(i doc.Discriminator, name string) bool {
+	return i.Type() == name
+}
+
+func strOf(i interface{}) string {
+	return fmt.Sprintf("%v", i)
 }

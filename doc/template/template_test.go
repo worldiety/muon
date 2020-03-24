@@ -18,10 +18,12 @@ func TestOpen(t *testing.T) {
 }
 
 func createDoc() *Document {
-	doc := &Document{}
-	doc.Title = `my book & % $ # _ { } ~ ^ \`
+	ws := &Workspace{}
+	doc := ws.NewDocument()
+	doc.Add(TitlePage(Text("my technical book"), Text("a subtitle")), TOC())
 	chap := doc.NewChapter("my first chapter")
-	chap.Add(
+
+	chap.Text(
 		`
 		The inventory system consists of a login server, an inventory service and a web application.
 		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
@@ -30,11 +32,20 @@ func createDoc() *Document {
 		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
 		labore et dolore magna aliquyam erat, sed diam voluptua.
 		
-		Text is aligned to chars at the left side. Empty lines are ignored.
-		`,
-		Br{},
-		It{"hal"}, Em("llo"), " world",
-	)
+		Span is aligned to chars at the left side. Empty lines are ignored.`)
+	chap.Text("wtf")
+	chap.Add(Newline())
+	chap.Add(Text("hello "), Italic(Text("worl"), Bold(Underline(Text("d")))), Newline())
+	chap.Add(Bold(Italic(Text(`ugly chars: & % $ # _ { } ~ ^ \`))), Newline())
+
+	sub := chap.NewChapter("a section")
+	sub.Text("This is a section within a chapter.")
+
+	subsub := sub.NewChapter("a subsection")
+	subsub.Text("This is another text but in a subsubsection.")
+
+	chap = doc.NewChapter("another main chapter")
+	chap.Text("typesetting test.")
 
 	return doc
 }

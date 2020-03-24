@@ -32,7 +32,7 @@ func printElem(in interface{}, f *template.File2) {
 		}
 	case doc.Br:
 		f.Println(`\newline`)
-	case doc.PageBreak:
+	case doc.Newpage:
 		f.Println(`\pagebreak`)
 	case doc.It:
 		f.Printf(`\textit{`)
